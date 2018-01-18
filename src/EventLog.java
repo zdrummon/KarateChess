@@ -1,4 +1,3 @@
-//this class prints logged events to the console
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
