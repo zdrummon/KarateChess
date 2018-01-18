@@ -1,12 +1,10 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 public class EventLog {
 	public EventLog() {}
 	
 	public static Date logDate;
 	private static SimpleDateFormat dateFormatter = new SimpleDateFormat(" dd-MM-yy' | 'hh:mm:ss");
-
 	public static String programVersion = "Karate Chess v0 \n\n";
 	private static String logColumns = "   DATE   |   TIME   |  EVENT  |  LOG ITEM";
 	private static int logCounter = 0;

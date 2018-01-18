@@ -15,12 +15,11 @@ public class Main extends Application {
 	
 	public Game game = new Game();
 	
-	//executes the main program
 	@Override
 	public void start(Stage stage) throws Exception {				
 		EventLog.startLog();
 		EventLog.logEvent("start program");	
 		
-		game.makeStage();	
+		game.createStage();	
 	}
 }

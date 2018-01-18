@@ -8,13 +8,12 @@ public class StartSceneGUI {
 	public QuitGame quitGame = new QuitGame();
 	public StartGame startGame = new StartGame();
 
-	public void populateScene() {
-		EventLog.logEvent("populate startScene");
+	public void populateStartScene() {
+		EventLog.logEvent("populate start scene");
 		
 		quitGame.createQuitButton();
-		startGame.createStartButton();
-		
-		startSceneLayout.setStyle("-fx-background-color: #0f770f");
+		startGame.createStartButton();		
+		startSceneLayout.setStyle("-fx-background-color: #002266");
 		startSceneLayout.getChildren().addAll(quitGame.quitButton, startGame.startButton);
 	}
 }

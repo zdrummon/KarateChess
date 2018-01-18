@@ -4,16 +4,18 @@ public class StartGame {
 	public StartGame () {}
 
 	public Button startButton = new Button("Start Game");
-//	private GameplayGUI gmeplayGUI = new GameplayGUI();
+	private GameSceneGUI gameSceneGUI = new GameSceneGUI();
 			
 	public void createStartButton() {
-		EventLog.logEvent("generate startButton");	
-		startButton.relocate(200, 200);
+		EventLog.logEvent("create start button");
+
+		//TODO set button size
+		startButton.relocate(Game.windowWidth / 2 - Game.buttonWidth * 3 / 2, Game.windowHeight / 3 - Game.buttonHeight / 2);
 		startButton.setOnAction(e -> {
 			EventLog.logEvent("start game");	
 			
-//			Game.mainStage.setScene(GameSceneContent.gameScene);
-//			gameSceneContent.populateGameScene();
+			Game.stage.setScene(gameSceneGUI.gameScene);
+			gameSceneGUI.populateGameScene();
 		});	
 	}
 }
