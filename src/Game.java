@@ -23,4 +23,4 @@ public class Game {
 		stage.setScene(startScene);
 		stage.show();
 	}
-}
+} 

@@ -15,5 +15,5 @@ public class QuitGame {
 			Game.stage.close();
 			EventLog.endLog();
 		});
-	}
+	} 
 }

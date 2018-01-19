@@ -16,4 +16,4 @@ public class StartSceneGUI {
 		startSceneLayout.setStyle("-fx-background-color: #002266");
 		startSceneLayout.getChildren().addAll(quitGame.quitButton, startGame.startButton);
 	}
-}
+} 
