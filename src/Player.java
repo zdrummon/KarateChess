@@ -1,12 +1,15 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
+
 
 public class Player {
-	public Player() {}
+	public Player(int spawnX, int spawnY ) {
+		playerXLocation = spawnX;
+		playerYLocation = spawnY;
+	}
 
-	public int playerXLocation = 1;
-	public int playerYLocation = 1;
+	public int playerXLocation = 10;
+	public int playerYLocation = 10;
 	
 	
 	 public ImageView playerUnit = new ImageView();   
@@ -14,7 +17,7 @@ public class Player {
      
 	public void createPlayer() {
 		playerUnit.setImage(playerImage);
-		playerUnit.relocate(playerXLocation, playerYLocation);
+		playerUnit.relocate( IndexToPixel.indexToPixelX(playerXLocation,  playerYLocation),IndexToPixel.indexToPixelY(playerXLocation,  playerYLocation));
 	
 		
 		

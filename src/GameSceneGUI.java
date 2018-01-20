@@ -9,8 +9,16 @@ public class GameSceneGUI {
 
 	public static Pane gameSceneLayout = new Pane();
 	public Scene gameScene = new Scene(gameSceneLayout, 21*24 +10 , 21*26+ 15);	
+	
+	private int playerSpawnX = 1;
+	private int playerSpawnY = 1;
+	
+	private int enemySpawnX = 20;
+	private int enemySpawnY = 20;
+		
 //	public ToggleButton cueBallButton = new ToggleButton(Game.windowWidth / 2 - 15, Game.windowHeight / 2 - 240, "images/cueball.png", ballID++);
-	public Player player = new Player();
+	public Player player = new Player(playerSpawnX,playerSpawnY);
+	public Enemy enemy = new Enemy(enemySpawnX,enemySpawnY);
 	private GameMap gameMap = new GameMap();
 	
 	public void populateGameScene() {	
@@ -25,7 +33,9 @@ public class GameSceneGUI {
 		
 		player.createPlayer();
 		controlPlaya();
-		gameSceneLayout.getChildren().addAll(player.playerUnit);
+		enemy.createEnemy();
+		
+		gameSceneLayout.getChildren().addAll(player.playerUnit, enemy.enemyUnit);
 		
 	
 		
@@ -33,9 +43,9 @@ public class GameSceneGUI {
 	
 	public void controlPlaya() {
 	gameScene.setOnKeyPressed( ae -> {
-		 if (ae.getCode() == KeyCode.Q && player.playerYLocation > 0) {
+		 if (ae.getCode() == KeyCode.Q ) {
 	        EventLog.logEvent("Q key was pressed");
-	        player.playerYLocation =  player.playerYLocation - 1;
+	        player.playerYLocation =  player.playerYLocation - 1 * ( player.playerXLocation % 2);
 	        player.playerXLocation =  player.playerXLocation - 1;
 	        player.playerUnit.relocate( IndexToPixel.indexToPixelX(player.playerXLocation,  player.playerYLocation),IndexToPixel.indexToPixelY(player.playerXLocation,  player.playerYLocation));
 	    			 } else if (ae.getCode() == KeyCode.W && player.playerYLocation > 0) {
@@ -43,14 +53,14 @@ public class GameSceneGUI {
 		        player.playerYLocation =  player.playerYLocation - 1;
 		        player.playerUnit.relocate( IndexToPixel.indexToPixelX(player.playerXLocation,  player.playerYLocation),IndexToPixel.indexToPixelY(player.playerXLocation,  player.playerYLocation));
 		 }
-		 else if (ae.getCode() == KeyCode.E && player.playerYLocation > 0) {
+		 else if (ae.getCode() == KeyCode.E ) {
 		        EventLog.logEvent("E key was pressed");
-		        player.playerYLocation =  player.playerYLocation - 1;
+		        player.playerYLocation =  player.playerYLocation - 1 * ( player.playerXLocation % 2);
 		        player.playerXLocation =  player.playerXLocation + 1;
 		        player.playerUnit.relocate( IndexToPixel.indexToPixelX(player.playerXLocation,  player.playerYLocation),IndexToPixel.indexToPixelY(player.playerXLocation,  player.playerYLocation));
 		    			} else if (ae.getCode() == KeyCode.D && player.playerYLocation > 0) {
 	        EventLog.logEvent("D key was pressed");
-	        player.playerYLocation =  player.playerYLocation + 1;
+	        player.playerYLocation =  player.playerYLocation + 1 * ( (player.playerXLocation + 1) % 2);
 	        player.playerXLocation =  player.playerXLocation + 1;
 	        player.playerUnit.relocate( IndexToPixel.indexToPixelX(player.playerXLocation,  player.playerYLocation),IndexToPixel.indexToPixelY(player.playerXLocation,  player.playerYLocation));
 	    			 } else if (ae.getCode() == KeyCode.S && player.playerYLocation > 0) {
@@ -60,7 +70,7 @@ public class GameSceneGUI {
 		    			 }
 		 else if (ae.getCode() == KeyCode.A && player.playerYLocation > 0) {
 		        EventLog.logEvent("A key was pressed");
-		        player.playerYLocation =  player.playerYLocation + 1;
+		        player.playerYLocation =  player.playerYLocation + 1 * (  (player.playerXLocation + 1)  % 2);
 		        player.playerXLocation =  player.playerXLocation - 1;
 		        player.playerUnit.relocate( IndexToPixel.indexToPixelX(player.playerXLocation,  player.playerYLocation),IndexToPixel.indexToPixelY(player.playerXLocation,  player.playerYLocation));
 		    				 }		 
