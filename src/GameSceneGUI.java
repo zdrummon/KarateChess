@@ -36,10 +36,16 @@ public class GameSceneGUI {
 		enemy.createEnemy();
 		
 		gameSceneLayout.getChildren().addAll(player.playerUnit, enemy.enemyUnit);
-		
-	
-		
 	}
+	
+	
+
+	    
+
+	   
+	
+	
+	
 	
 	public void controlPlaya() {
 	gameScene.setOnKeyPressed( ae -> {
