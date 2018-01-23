@@ -18,7 +18,8 @@ public class Enemy {
 		public void createEnemy() {
 			enemyUnit.setImage(enemyImage);
 			enemyUnit.relocate( IndexToPixel.indexToPixelX(enemyXLocation,  enemyYLocation),IndexToPixel.indexToPixelY(enemyXLocation,  enemyYLocation) - 32);
-		
+			enemyUnit.setFitWidth(Game.currentWindowHeight/10);
+			enemyUnit.setFitHeight(Game.currentWindowHeight/10);
 			
 			
 			

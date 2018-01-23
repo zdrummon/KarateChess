@@ -1,6 +1,6 @@
 
  /*===============================================
- *Karate Chess v0		 *
+ *Karate Chess v1		 *
  *coded by										 *
  *	Trevor Haggerty 	- cesismalon@gmail.com	 *
  *	Zachary Drummond 	- zdrummon@gmail.com	 *

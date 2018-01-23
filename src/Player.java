@@ -20,15 +20,9 @@ public class Player {
 	public void createPlayer() {
 		playerUnit.setImage(playerImage);
 		playerUnit.relocate( IndexToPixel.indexToPixelX(playerXLocation,  playerYLocation),IndexToPixel.indexToPixelY(playerXLocation,  playerYLocation));
-		playerUnit.isResizable();
-		
-		
-		
-		//playerUnit.fitWidthProperty().bind(Game.stage.widthProperty()); 
-		//playerUnit.fitHeightProperty().bind(Game.stage.heightProperty()); 
-		//playerImage.(Game.windowWidth/2, Game.windowHeight/2);
-	playerUnit.setFitWidth(Game.windowWidth/2);
-	playerUnit.setFitHeight(Game.windowHeight/2);
+//		playerUnit.isResizable();
+		playerUnit.setFitWidth(Game.currentWindowHeight/10);
+		playerUnit.setFitHeight(Game.currentWindowHeight/10);
 	}
 	
 	

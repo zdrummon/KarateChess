@@ -13,10 +13,13 @@ public class GameMap {
 		for(int i = 0; i < 21; i++) {
 			for (int j = 0; j < 21; j++) {
 			ImageView bufferHex = new ImageView();   
-		bufferHex.setImage(stoneHexImage);
-		arenaArray[i][j] = bufferHex ;
-		arenaArray[i][j].relocate(IndexToPixel.indexToPixelX( i , j),IndexToPixel.indexToPixelY( i , j ) + 10);
-		GameSceneGUI.gameSceneLayout.getChildren().add(arenaArray[i][j]);
+			bufferHex.setImage(stoneHexImage);
+			arenaArray[i][j] = bufferHex ;
+			arenaArray[i][j].relocate(IndexToPixel.indexToPixelX( i , j),IndexToPixel.indexToPixelY( i , j ) + 10);
+			GameSceneGUI.gameSceneLayout.getChildren().add(arenaArray[i][j]);
+			
+			arenaArray[i][j].setFitWidth(Game.currentWindowHeight/21);
+			arenaArray[i][j].setFitHeight(Game.currentWindowHeight/21);
 		}
 			}
 		
